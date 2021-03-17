@@ -41,6 +41,8 @@ gem 'rack-cors'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'numbers_in_words'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -72,6 +74,7 @@ group :test do
   gem 'chromedriver-helper'
   gem 'database_cleaner-mongoid'
   gem 'simplecov', require: false
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

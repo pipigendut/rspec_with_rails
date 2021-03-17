@@ -4,3 +4,4 @@ RSpec.configure do |config|
     Rails.application.load_seed
   end
 end
+

@@ -1,6 +1,7 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
+  include AgeHelper
 
   has_many :posts
 
@@ -12,6 +13,8 @@ class User
   ## Database authenticatable
   field :firstname,          type: String
   field :lastname,           type: String
+  field :age,                type: Integer
+  field :role,               type: String
   field :email,              type: String
   field :encrypted_password, type: String
 
@@ -41,4 +44,12 @@ class User
   # field :locked_at,       type: Time
 
   validates_presence_of :firstname
+
+  def is_admin?
+    self.role == 'admin'
+  end
+
+  def is_baby?
+    get_range_age(self.age) == 'baby'
+  end
 end

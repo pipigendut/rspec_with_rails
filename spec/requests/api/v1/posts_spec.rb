@@ -10,7 +10,6 @@ RSpec.describe "Api::V1::Posts", type: :request do
         get api_v1_posts_path, headers: {
           'Authorization': "Bearer #{JSON.parse(response.body)["result"]["token"]}"
         }
-        
       end
   
       it 'returns 200' do
